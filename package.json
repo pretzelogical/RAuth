@@ -1,0 +1,20 @@
+{
+  "name": "rauth",
+  "version": "1.0.0",
+  "description": "Route based auth server",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "nodemon src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "pretzelogical",
+  "license": "",
+  "dependencies": {
+    "express": "^4.19.2",
+    "express-exception-handler": "^1.3.97"
+  },
+  "type": "module",
+  "devDependencies": {
+    "nodemon": "^3.1.3"
+  }
+}
