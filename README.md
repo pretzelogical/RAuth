@@ -1,6 +1,17 @@
 # RAuth
 
-RAuth (pronounced roth) is a route level auth microservice using session authentication.
+RAuth (pronounced roth) is a route level auth microservice using session authentication. It supports multiple levels of authentication. Initial roles can be describes in a json file
+
+Default behavior is to block access of all routes unless RAUTH_RISKY_ROUTES env is set to true
+
+
+## Env variables
+Env variables that are booleanlike will take 0 as false and nonzero as true. They may also be set as the word true or false case insensitive.
+
+### Available variables:
+  - RAUTH_PORT[default = 3000]: integer number that will be the port RAUTH uses
+  - RAUTH_RISKY_ROUTES[default = false]: Accept all undefined routes
+
 
 ## Examples of expected use
 
@@ -23,7 +34,7 @@ Frontend/register <- GET Client
 Frontend/register <RegisterPage /> => Client
 
 2.
-RAuth -> {
+RAuth <- {
   "registerRequest": {
     "credentials": "Base64EncodedCredentials",
     "loginNow": true || false
@@ -36,7 +47,7 @@ RAuth -> {
 ] POST Client
 
 3.
-RAuth -> {
+RAuth {
   "registerResponse": {
     "authenticated": true || false
     "reason" : authenticated ? null : <Reason for rejection>,
