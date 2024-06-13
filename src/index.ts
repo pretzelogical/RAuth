@@ -1,8 +1,8 @@
 import express from 'express';
 import exceptionHandler from 'express-exception-handler';
-import register from './routes/register.js';
-import login from './routes/login.js';
-import settings from './settings.js';
+import register from './routes/register';
+import login from './routes/login';
+import settings from './settings';
 
 exceptionHandler.handle({ nextOnce: false });
 const app = express();

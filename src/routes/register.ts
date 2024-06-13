@@ -1,4 +1,6 @@
-export default async function register(req, res) {
+import { Request, Response } from "express";
+
+export default async function register(req: Request, res: Response) {
   const { credentials, loginNow } = req.body.registerRequest;
   const [ username, password ] =
     Buffer.from(credentials, 'base64').toString().split(':');
