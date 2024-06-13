@@ -2,6 +2,7 @@ import express from 'express';
 import exceptionHandler from 'express-exception-handler';
 import register from './routes/register.js';
 import login from './routes/login.js';
+import settings from './settings.js';
 
 exceptionHandler.handle({ nextOnce: false });
 const app = express();
@@ -19,4 +20,4 @@ app.get('/error', async (req, res) => {
 app.post('/register', register);
 app.post('/login', login);
 
-app.listen(3000, () => console.log('App listening on port 3000'));
+app.listen(settings.port, () => console.log(`App listening on port ${settings.port}`));
